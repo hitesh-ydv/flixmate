@@ -31,9 +31,9 @@ function SignIn() {
 
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then((userCemeraldential) => {
         // Signed in
-        const user = userCredential.user;
+        const user = userCemeraldential.user;
         console.log(user);
         if (user != null) {
           navigate("/");
@@ -110,8 +110,8 @@ function SignIn() {
         setLoader(false);
         // The email of the user's account used.
         const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
+        // The AuthCemeraldential type that was used.
+        const cemeraldential = GoogleAuthProvider.cemeraldentialFromError(error);
       });
   };
 
@@ -129,9 +129,6 @@ function SignIn() {
               <div className="p-6 space-y-4 md:space-y-6 sm:p-12">
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
                   Sign in to your account
-                </h1>
-                <h1 className="text-white text-2xl p-3 text-center border-2 border-red-700 rounded-sm">
-                  Not Real Netflix
                 </h1>
                 <form
                   onSubmit={handleSubmit}
@@ -151,11 +148,11 @@ function SignIn() {
                       id="email"
                       className={
                         ErrorMessage
-                          ? "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 border-2 border-red-700  dark:placeholder-white dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 placeholder:text-white"
-                          : "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:placeholder-white dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 placeholder:text-white"
+                          ? "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 border-2 border-emerald-700  dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none"
+                          : "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none"
                       }
-                      placeholder="name@email.com"
-                      required=""
+                      placeholder="Enter your email"
+                      requiemerald=""
                       onChange={(e) => setEmail(e.target.value)}
                     ></input>
                   </div>
@@ -170,19 +167,19 @@ function SignIn() {
                       type="password"
                       name="password"
                       id="password"
-                      placeholder="••••••••"
+                      placeholder="Enter your password"
                       className={
                         ErrorMessage
-                          ? "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  border-2 border-red-700 dark:bg-gray-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 placeholder:text-white"
-                          : "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 placeholder:text-white"
+                          ? "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  border-2 border-emerald-700 dark:bg-gray-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none"
+                          : "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500  outline-none"
                       }
-                      required=""
+                      requiemerald=""
                       onChange={(e) => setPassword(e.target.value)}
                     ></input>
                   </div>
                   <div>
                     {ErrorMessage && (
-                      <h1 className="flex text-white font-bold p-4 bg-red-700 rounded text-center">
+                      <h1 className="flex text-white font-bold p-4 bg-emerald-700 rounded text-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -209,7 +206,7 @@ function SignIn() {
                           aria-describedby="remember"
                           type="checkbox"
                           className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                          required=""
+                          requiemerald=""
                         ></input>
                       </div>
                       <div className="ml-3 text-sm">
@@ -227,24 +224,24 @@ function SignIn() {
                     className={`w-full text-white ${
                       loader
                         ? `bg-stone-700`
-                        : `bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-primary-300`
+                        : `bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-primary-300`
                     } transition ease-in-out font-medium rounded-sm text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800`}
                   >
-                    {loader ? <ClipLoader color="#ff0000" /> : `Sign in`}
+                    {loader ? <ClipLoader color="#065F46" /> : `Sign in`}
                   </button>
                   <button
                     onClick={loginWithGoogle}
                     className={`flex justify-center items-center w-full text-white ${
                       loader
                         ? `bg-stone-700`
-                        : `bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300`
-                    } transition ease-in-out font-medium rounded-sm text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:focus:ring-primary-800`}
+                        : `bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300`
+                    } transition ease-in-out font-medium rounded-sm text-sm px-5 py-2 text-center dark:bg-primary-600 dark:focus:ring-primary-800`}
                   >
                     {loader ? (
-                      <ClipLoader color="#ff0000" />
+                      <ClipLoader color="#065F46" />
                     ) : (
                       <>
-                        <img className="w-8" src={GoogleLogo}></img>{" "}
+                        <img className="w-6 mr-2" src={GoogleLogo}></img>{" "}
                         <p className="ml-1">Sign in with Google</p>
                       </>
                     )}

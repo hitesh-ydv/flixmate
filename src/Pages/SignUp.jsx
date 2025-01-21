@@ -30,7 +30,7 @@ function SignUp() {
 
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then((userCemeraldential) => {
         // Signed in
         onAuthStateChanged(auth, (user) => {
           const EmptyArray = [];
@@ -63,7 +63,7 @@ function SignUp() {
           });
         });
 
-        const user = userCredential.user;
+        const user = userCemeraldential.user;
         if (user != null) {
           navigate("/");
         }
@@ -93,9 +93,6 @@ function SignUp() {
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
                   Create a new account
                 </h1>
-                <h1 className="text-white text-2xl p-3 text-center border-2 border-red-700 rounded-sm">
-                  Not Real Netflix
-                </h1>
                 <form
                   onSubmit={handleSubmit}
                   className="space-y-4 md:space-y-6"
@@ -115,11 +112,11 @@ function SignUp() {
                       id="email"
                       className={
                         ErrorMessage
-                          ? "bg-stone-700 text-white sm:text-sm rounded-sm border-2 border-red-700 focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:text-white "
-                          : "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:text-white "
+                          ? "bg-stone-700 text-white sm:text-sm rounded-sm border-2 border-emerald-700 focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:text-white outline-none"
+                          : "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:text-white outline-none "
                       }
-                      placeholder="name@emil.com"
-                      required=""
+                      placeholder="Enter your email"
+                      requiemerald=""
                     ></input>
                   </div>
                   <div>
@@ -134,18 +131,18 @@ function SignUp() {
                       type="password"
                       name="password"
                       id="password"
-                      placeholder="••••••••"
+                      placeholder="Enter your password"
                       className={
                         ErrorMessage
-                          ? "bg-stone-700 text-white sm:text-sm rounded-sm border-2 border-red-700 focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                          : "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:text-white"
+                          ? "bg-stone-700 text-white sm:text-sm rounded-sm border-2 border-emerald-700 focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none"
+                          : "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:text-white outline-none"
                       }
-                      required=""
+                      requiemerald=""
                     ></input>
                   </div>
                   <div>
                     {ErrorMessage && (
-                      <h1 className="flex text-white font-bold p-4 bg-red-700 rounded text-center">
+                      <h1 className="flex text-white font-bold p-4 bg-emerald-700 rounded text-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -173,7 +170,7 @@ function SignUp() {
                           aria-describedby="remember"
                           type="checkbox"
                           className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 "
-                          required=""
+                          requiemerald=""
                         ></input>
                       </div>
                       <div className="ml-3 text-sm">
@@ -188,10 +185,10 @@ function SignUp() {
                     className={`w-full text-white ${
                       loader
                         ? `bg-stone-700`
-                        : `bg-red-800 focus:ring-4 focus:outline-none focus:ring-primary-300`
-                    } font-medium rounded-sm text-sm px-5 py-2.5 text-center`}
+                        : `bg-emerald-700 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:bg-emerald-800 `
+                    } font-medium rounded-sm text-sm px-5 py-2.5 text-center transition ease-in-out`}
                   >
-                    {loader ? <ClipLoader color="#ff0000" /> : "Create now"}
+                    {loader ? <ClipLoader color="#065F46" /> : "Create now"}
                   </button>
                   <p className="text-sm font-light text-gray-500">
                     Already have one?{" "}

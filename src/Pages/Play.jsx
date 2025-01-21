@@ -46,6 +46,8 @@ function Play() {
       setIsFromWatchedMovies(true);
     }
 
+    window.scrollTo({top: 0, behavior: "smooth"});
+
     axios
       .get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-US`)
       .then((responce) => {
@@ -95,7 +97,7 @@ function Play() {
 
   return (
     <div>
-      <Navbar></Navbar>
+        <Navbar></Navbar>
 
       {PopupMessage}
       <div className="mt-12 h-[31vh] sm:h-[42vh] md:h-[45vh] lg:h-[55vh] lg:mt-0 xl:h-[98vh]">
@@ -129,7 +131,7 @@ function Play() {
               </h1>
               <StarRatings
                 rating={movieDetails.vote_average / 2}
-                starRatedColor="red"
+                starRatedColor="#065F46"
                 numberOfStars={5}
                 name="rating"
                 starDimension="1rem"
@@ -139,19 +141,19 @@ function Play() {
               <div className="bg-neutral-600 w-full h-[0.1rem] my-5"></div>
 
               <div className="hidden lg:grid">
-                <h1 className=" text-red-700 ">
+                <h1 className=" text-emerald-700 ">
                   Released on :{" "}
                   <a className="text-white ml-1">
                     {movieDetails.release_date || movieDetails.air_date}
                   </a>
                 </h1>
-                <h1 className="text-red-700">
+                <h1 className="text-emerald-700">
                   Language :{" "}
                   <a className="text-white ml-1">
                     {movieDetails.original_language}
                   </a>
                 </h1>
-                <h1 className="text-red-700">
+                <h1 className="text-emerald-700">
                   Geners :{" "}
                   {movieDetails.genres &&
                     movieDetails.genres.map((gener) => {
@@ -166,7 +168,7 @@ function Play() {
                   {isFromMyList ? (
                     <button
                       onClick={() => removeFromMyList(movieDetails)}
-                      className="group flex items-center border-[0.7px] border-white text-white font-medium sm:font-bold text-xs sm:text-lg sd:text-xl py-3 lg:px-10 rounded shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-red-700 outline-none focus:outline-none mt-4 mb-3 ease-linear transition-all duration-150"
+                      className="group flex items-center border-[0.7px] border-white text-white font-medium sm:font-bold text-xs sm:text-lg sd:text-xl py-3 lg:px-10 rounded shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-emerald-700 outline-none focus:outline-none mt-4 mb-3 ease-linear transition-all duration-150"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +189,7 @@ function Play() {
                   ) : isFromWatchedMovies ? (
                     <button
                       onClick={() => removeFromWatchedMovies(movieDetails)}
-                      className="group flex items-center border-[0.7px] border-white text-white font-medium sm:font-semibold text-xs sm:text-lg lg:px-10 xl:font-bold py-3 rounded shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-red-700 outline-none focus:outline-none mt-4 mb-3 ease-linear transition-all duration-150"
+                      className="group flex items-center border-[0.7px] border-white text-white font-medium sm:font-semibold text-xs sm:text-lg lg:px-10 xl:font-bold py-3 rounded shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-emerald-700 outline-none focus:outline-none mt-4 mb-3 ease-linear transition-all duration-150"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -208,11 +210,11 @@ function Play() {
                   ) : (
                     <button
                       onClick={() => addToMyList(movieDetails)}
-                      className="group flex items-center border-[0.7px] border-white text-white font-medium sm:font-semibold text-xs sm:text-lg lg:px-10 xl:font-bold py-3 rounded shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-red-700 outline-none focus:outline-none mt-4 mb-3 ease-linear transition-all duration-150"
+                      className="group flex items-center border-[0.7px] border-white text-white font-medium sm:font-semibold text-xs sm:text-lg lg:px-10 xl:font-bold py-3 rounded shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-emerald-700 outline-none focus:outline-none mt-4 mb-3 ease-linear transition-all duration-150"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 mr-1  ml-2 text-white hover:text-red-700 group-hover:text-red-700 ease-linear transition-all duration-150"
+                        className="h-6 w-6 mr-1  ml-2 text-white hover:text-emerald-700 group-hover:text-emerald-700 ease-linear transition-all duration-150"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -231,7 +233,7 @@ function Play() {
                   {isFromLikedMovies ? (
                     <button
                       onClick={() => removeFromLikedMovies(movieDetails)}
-                      className="border-white text-white p-4 rounded-full border-2 sm:ml-4 text-xs sm:mt-4 sm:text-lg md:text-xl shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-red-700 outline-none focus:outline-none mb-3 ease-linear transition-all duration-150"
+                      className="border-white text-white p-4 rounded-full border-2 sm:ml-4 text-xs sm:mt-4 sm:text-lg md:text-xl shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-emerald-700 outline-none focus:outline-none mb-3 ease-linear transition-all duration-150"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -251,7 +253,7 @@ function Play() {
                   ) : (
                     <button
                       onClick={() => addToLikedMovies(movieDetails)}
-                      className="border-white text-white p-4 rounded-full border-2 sm:ml-4 text-xs sm:mt-4 sm:text-lg md:text-xl shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-red-700 outline-none focus:outline-none mb-3 ease-linear transition-all duration-150"
+                      className="border-white text-white p-4 rounded-full border-2 sm:ml-4 text-xs sm:mt-4 sm:text-lg md:text-xl shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-emerald-700 outline-none focus:outline-none mb-3 ease-linear transition-all duration-150"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -275,19 +277,19 @@ function Play() {
             <div className="flex justify-between">
               <div className="lg:hidden">
                 <div>
-                  <h1 className=" text-red-700 text-sm leading-7 sm:text-lg sm:leading-9 lg:text-2xl lg:leading-10">
+                  <h1 className=" text-emerald-700 text-sm leading-7 sm:text-lg sm:leading-9 lg:text-2xl lg:leading-10">
                     Released on :{" "}
                     <a className="text-white ml-2">
                       {movieDetails.release_date || movieDetails.air_date}
                     </a>
                   </h1>
-                  <h1 className=" text-red-700 text-sm leading-7 sm:text-lg sm:leading-9 lg:text-2xl lg:leading-10">
+                  <h1 className=" text-emerald-700 text-sm leading-7 sm:text-lg sm:leading-9 lg:text-2xl lg:leading-10">
                     Language :{" "}
                     <a className="text-white ml-2">
                       {movieDetails.original_language}
                     </a>
                   </h1>
-                  <h1 className="text-red-700 text-sm leading-7 sm:text-lg sm:leading-9 lg:text-2xl lg:leading-10">
+                  <h1 className="text-emerald-700 text-sm leading-7 sm:text-lg sm:leading-9 lg:text-2xl lg:leading-10">
                     Geners :{" "}
                     {movieDetails.genres &&
                       movieDetails.genres.slice(0, 2).map((gener) => {
@@ -304,11 +306,11 @@ function Play() {
                 <div>
                   <button
                     onClick={() => addToMyList(movieDetails)}
-                    className="group flex items-center justify-center w-full border-[0.7px] border-white text-white font-medium sm:font-bold text-xs sm:px-12 sm:text-lg md:px-16 sd:text-xl  py-3 rounded shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-red-700 outline-none focus:outline-none mt-4 mb-3 ease-linear transition-all duration-150"
+                    className="group flex items-center justify-center w-full border-[0.7px] border-white text-white font-medium sm:font-bold text-xs sm:px-12 sm:text-lg md:px-16 sd:text-xl  py-3 rounded shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-emerald-700 outline-none focus:outline-none mt-4 mb-3 ease-linear transition-all duration-150"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 mr-1  ml-2 text-white hover:text-red-700 group-hover:text-red-700 ease-linear transition-all duration-150"
+                      className="h-6 w-6 mr-1  ml-2 text-white hover:text-emerald-700 group-hover:text-emerald-700 ease-linear transition-all duration-150"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -324,7 +326,7 @@ function Play() {
                   </button>
                   <button
                     onClick={() => navigate("/")}
-                    className="group flex items-center justify-center w-full bg-red-600 border-white text-white font-medium sm:font-bold text-xs sm:mt-4 sm:px-12 sm:text-lg md:px-16 md:text-xl py-3 rounded shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-red-700 outline-none focus:outline-none mb-3 ease-linear transition-all duration-150"
+                    className="group flex items-center justify-center w-full bg-emerald-600 border-white text-white font-medium sm:font-bold text-xs sm:mt-4 sm:px-12 sm:text-lg md:px-16 md:text-xl py-3 rounded shadow hover:shadow-lg hover:bg-white hover:border-white hover:text-emerald-700 outline-none focus:outline-none mb-3 ease-linear transition-all duration-150"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -366,7 +368,7 @@ function Play() {
             <section>
               <div className="flex flex-wrap justify-center bg-[#000000ac]">
                 <div className="p-4 sm:p-14">
-                  <h1 className="text-white text-4xl font-semibold my-10 border-l-4 border-red-800 pl-3">
+                  <h1 className="text-white text-4xl font-semibold my-10 border-l-4 border-emerald-800 pl-3">
                     Similar Movies
                   </h1>
                   <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">

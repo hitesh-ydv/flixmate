@@ -15,8 +15,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'custom-gradient': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0) 100%);',
-        'custom-gradients': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0) 100%);',
+        'custom-gradient': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);',
+        'custom-gradients': 'linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0) 100%);',
       },
 
       padding:{
@@ -38,7 +38,7 @@ module.exports = {
         'avengers': "linear-gradient(to right bottom, rgba('#7ed56f',0.8), rgba('#28b485',0.8)),url()",
         'fadeBottom': "linear-gradient(180deg,hsl(0deg 0% 0% / 0%),#000000a2,hsl(0deg 0% 7%));",
         'fadeBlack': "background: linear-gradient(1turn,hsl(0deg 0% 0% / 60%),hsl(0deg 0% 0% / 0%) 65%);",
-        'fadeRed' : "linear-gradient(90deg, hsl(0deg 77% 42% / 44%) 0%, hsl(0deg 59% 46% / 51%) 35%, hsl(220deg 26% 44% / 0%) 100%) "
+        'fadeemerald' : "linear-gradient(90deg, hsl(0deg 77% 42% / 44%) 0%, hsl(0deg 59% 46% / 51%) 35%, hsl(220deg 26% 44% / 0%) 100%) "
       },
       color:{
         'black': "#010511",

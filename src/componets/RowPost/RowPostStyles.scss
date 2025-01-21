@@ -17,11 +17,13 @@
   color: white;
   opacity: 0;
   transition: all 400ms ease-out 0s;
+  padding: 1rem 1.5rem;
 }
 .swiper-button-next {
   color: white;
   opacity: 0;
   transition: all 400ms ease-out 0s;
+  padding: 1rem 1.5rem;
 }
 
 .swiper-pagination {
@@ -63,7 +65,7 @@
   z-index: 20;
   transition: all 350ms ease-out 0s;
   cursor: pointer;
-  // border-left: 2px solid red;
+  // border-left: 2px solid emerald;
 }
 .swiper-wrapper:hover {
   .swiper-slide {

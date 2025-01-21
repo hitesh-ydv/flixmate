@@ -5,6 +5,7 @@ import { Fade } from "react-reveal";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import { AuthContext } from "../../Context/UserContext";
+import logo from "../../images/flixmate.png";
 
 function Navbar(props) {
   const { User } = useContext(AuthContext);
@@ -62,48 +63,48 @@ function Navbar(props) {
       >
         <nav
           className={`transition duration-500 ease-in-out bg-custom-gradient ${
-            show && "transition duration-500 ease-in-out bg-black bg-opacity-70 "
+            show && "transition duration-500 ease-in-out bg-black "
           } `}
         >
           <div className="px-4 mx-auto max-w-8xl sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <h1 className="text-red-600 font-bold text-2xl tracking-normal">FLIXMATE</h1>
+                  <img className="w-40"  src={logo} alt="" />
                 </div>
                 <div className="hidden md:block">
                   <div className="flex items-center ml-10 space-x-4">
                     <Link
                       to={"/"}
-                      className="py-2 font-medium text-white transition ease-in-out delay-150 rounded-md cursor-pointer hover:text-red-800 lg:px-3 text-m"
+                      className="py-2 font-medium text-white transition ease-in-out rounded-md cursor-pointer hover:text-emerald-600 lg:px-3 text-m"
                     >
                       Home
                     </Link>
 
                     <Link
                       to={"/series"}
-                      className="py-2 font-medium text-white transition ease-in-out delay-150 rounded-md cursor-pointer hover:text-red-800 lg:px-3 text-m"
+                      className="py-2 font-medium text-white transition ease-in-out rounded-md cursor-pointer hover:text-emerald-600 lg:px-3 text-m"
                     >
                       Series
                     </Link>
 
                     <Link
                       to={"/history"}
-                      className="py-2 font-medium text-white transition ease-in-out delay-150 rounded-md cursor-pointer hover:text-red-800 lg:px-3 text-m"
+                      className="py-2 font-medium text-white transition ease-in-out rounded-md cursor-pointer hover:text-emerald-600 lg:px-3 text-m"
                     >
                       History
                     </Link>
 
                     <Link
                       to={"/liked"}
-                      className="py-2 font-medium text-white transition ease-in-out delay-150 rounded-md cursor-pointer hover:text-red-800 lg:px-3 text-m"
+                      className="py-2 font-medium text-white transition ease-in-out rounded-md cursor-pointer hover:text-emerald-600 lg:px-3 text-m"
                     >
                       Liked
                     </Link>
 
                     <Link
                       to={"/mylist"}
-                      className="py-2 font-medium text-white transition ease-in-out delay-150 rounded-md cursor-pointer hover:text-red-800 lg:px-3 text-m"
+                      className="py-2 font-medium text-white transition ease-in-out rounded-md cursor-pointer hover:text-emerald-600 lg:px-3 text-m"
                     >
                       My List
                     </Link>
@@ -117,7 +118,7 @@ function Navbar(props) {
                   <Link to={"/search"}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="items-center w-10 h-10 pr-4 mt-auto mb-auto text-white hover:text-red-800 cursor-pointer"
+                      className="items-center w-10 h-10 pr-4 mt-auto mb-auto text-white hover:text-emerald-600 cursor-pointer"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -132,7 +133,7 @@ function Navbar(props) {
                   </Link>
 
                   {User ? (
-                    <a className="items-center hidden pr-4 mt-auto mb-auto text-base font-medium text-white transition ease-in-out delay-150 cursor-pointer hover:text-red-800 md:flex">
+                    <a className="items-center hidden pr-4 mt-auto mb-auto text-base font-mediume transition ease-in-out cursor-pointer text-white hover:text-emerald-600 md:flex">
                       {User.displayName}
                     </a>
                   ) : null}
@@ -160,16 +161,16 @@ function Navbar(props) {
                         src={
                           profilePic
                             ? `${User.photoURL}`
-                            : `https://www.citypng.com/public/uploads/preview/profile-user-round-red-icon-symbol-download-png-11639594337tco5j3n0ix.png`
+                            : `https://www.citypng.com/public/uploads/preview/profile-user-round-emerald-icon-symbol-download-png-11639594337tco5j3n0ix.png`
                         }
                         alt="NETFLIX"
                       />
                     </Link>
-                    <ul class="absolute hidden text-white pt-1 -ml-32 group-hover:block transition ease-in-out delay-150">
+                    <ul class="absolute hidden text-white pt-1 -ml-32 group-hover:block transition ease-in-out">
                       <li>
                         <Link
                           to={"/profile"}
-                          className="cursor-pointer rounded-t bg-stone-900 font-bold hover:border-l-4 hover:bg-gradient-to-r from-[#ff000056] border-red-800 py-2 px-4 block whitespace-no-wrap transition ease-in-out delay-150"
+                          className="cursor-pointer rounded-t bg-stone-900 font-bold hover:border-l-4 hover:bg-gradient-to-r from-[#065F46] border-emerald-800 py-2 px-4 block whitespace-no-wrap transition ease-in-out"
                         >
                           Profile
                         </Link>
@@ -177,7 +178,7 @@ function Navbar(props) {
                       <li>
                         <Link
                           to={"/signin"}
-                          className="cursor-pointer bg-stone-900 font-semibold hover:border-l-4 hover:bg-gradient-to-r from-[#ff000056] border-red-800 py-2 px-4 block whitespace-no-wrap transition ease-in-out delay-150"
+                          className="cursor-pointer bg-stone-900 font-semibold hover:border-l-4 hover:bg-gradient-to-r from-[#065F46] border-emerald-700 py-2 px-4 block whitespace-no-wrap transition ease-in-out"
                         >
                           Add another User
                         </Link>
@@ -185,7 +186,7 @@ function Navbar(props) {
                       <li>
                         <a
                           onClick={SignOut}
-                          className="cursor-pointer rounded-b bg-stone-900 font-bold hover:border-l-4 hover:bg-gradient-to-r from-[#ff000056] border-red-800 py-2 px-4 block whitespace-no-wrap transition ease-in-out delay-150"
+                          className="cursor-pointer rounded-b bg-stone-900 font-bold hover:border-l-4 hover:bg-gradient-to-r from-[#065F46] border-emerald-700 py-2 px-4 block whitespace-no-wrap transition ease-in-out"
                         >
                           Sign Out
                         </a>
@@ -257,44 +258,44 @@ function Navbar(props) {
               <div className="md:hidden" id="mobile-menu">
                 <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   <Link to={"/"}>
-                    <a className="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-red-800">
+                    <a className="block px-3 py-2 text-base font-medium text-white rounded-md hover:bg-emerald-800">
                       Home
                     </a>
                   </Link>
 
                   <Link to={"/series"}>
-                    <a className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-red-800 hover:text-white">
+                    <a className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-emerald-800 hover:text-white">
                       TV-Series
                     </a>
                   </Link>
 
                   <Link to={"/history"}>
-                    <a className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-red-800 hover:text-white">
+                    <a className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-emerald-800 hover:text-white">
                       History
                     </a>
                   </Link>
 
                   <Link to={"/liked"}>
-                    <a className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-red-800 hover:text-white">
+                    <a className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-emerald-800 hover:text-white">
                       Liked
                     </a>
                   </Link>
 
                   <Link to={"/mylist"}>
-                    <a className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-red-800 hover:text-white">
+                    <a className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-emerald-800 hover:text-white">
                       My-List
                     </a>
                   </Link>
 
                   <Link to={"/signin"}>
-                    <a className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-red-800 hover:text-white">
+                    <a className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-emerald-800 hover:text-white">
                       Add another user
                     </a>
                   </Link>
 
                   <a
                     onClick={SignOut}
-                    className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-red-800 hover:text-white"
+                    className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-emerald-800 hover:text-white"
                   >
                     Sign Out
                   </a>
