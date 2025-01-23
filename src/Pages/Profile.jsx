@@ -153,7 +153,7 @@ function Profile() {
           />
         ) : null}
         <Fade>
-          <div className="bg-[#000000bf] p-5 md:p-12 rounded-md">
+          <div className="bg-[#000000bf] p-5 md:p-12 rounded-md mt-52">
             <h1 className="text-4xl text-white font-bold mb-4 md:mb-8">
               Edit your Profile
             </h1>
@@ -196,7 +196,7 @@ function Profile() {
                 <h1 className="text-white text-lg font-medium mb-4">
                   Who is Watching ?
                 </h1>
-                <div className="flex justify-between cursor-pointer mb-4 md:mb-8">
+                <div className="flex gap-5 flex-wrap cursor-pointer mb-4 md:mb-8">
                   <img
                     onClick={() =>
                       updateProfilePic(
@@ -227,11 +227,29 @@ function Profile() {
                   <img
                     onClick={() =>
                       updateProfilePic(
-                        "https://ih0.emeraldbubble.net/image.618363037.0853/flat,1000x1000,075,f.u2.jpg"
+                        "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp"
                       )
                     }
                     className="w-16 h-16 rounded-md cursor-pointer"
-                    src="https://ih0.emeraldbubble.net/image.618363037.0853/flat,1000x1000,075,f.u2.jpg"
+                    src="https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp"
+                  />
+                  <img
+                    onClick={() =>
+                      updateProfilePic(
+                        "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-w3lqr61qe57e9yt8.webp"
+                      )
+                    }
+                    className="w-16 h-16 rounded-md cursor-pointer"
+                    src="https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-w3lqr61qe57e9yt8.webp"
+                  />
+                  <img
+                    onClick={() =>
+                      updateProfilePic(
+                        "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-2fg93funipvqfs9i.webp"
+                      )
+                    }
+                    className="w-16 h-16 rounded-md cursor-pointer"
+                    src="https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-2fg93funipvqfs9i.webp"
                   />
                   <input
                     style={{ display: "none" }}
