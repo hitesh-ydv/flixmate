@@ -9,7 +9,6 @@ import Context from "./Context/UserContext";
 import Context2 from "./Context/moviePopUpContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
     <Router>
       <Context>
         <Context2>
@@ -17,5 +16,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Context2>
       </Context>
     </Router>
-  </React.StrictMode>
 );
