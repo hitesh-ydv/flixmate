@@ -108,6 +108,12 @@ function Navbar(props) {
                     >
                       My List
                     </Link>
+                    <Link
+                      to={"/university"}
+                      className="py-2 font-medium text-white transition ease-in-out rounded-md cursor-pointer hover:text-emerald-600 lg:px-3 text-m"
+                    >
+                      University
+                    </Link>
                   </div>
                 </div>
               </div>

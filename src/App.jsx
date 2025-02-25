@@ -20,6 +20,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Loading from "./componets/Loading/Loading";
 import Navbar from "./componets/Header/Navbar";
 import NavbarWithoutUser from "./componets/Header/NavbarWithoutUser";
+import University from "./Pages/University";
 
 function App() {
   const { User, setUser } = useContext(AuthContext);
@@ -44,6 +45,7 @@ function App() {
               <Route path="/search" element={<Search />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/mylist" element={<MyList />} />
+              <Route path="/university" element={<University />} />
               <Route path="/liked" element={<LikedMovies />} />
               <Route path="/history" element={<History />} />
               <Route path="/play/:id" element={<Play />} />
